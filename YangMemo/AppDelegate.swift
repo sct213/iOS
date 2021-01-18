@@ -11,7 +11,8 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    // 이전 버전에서 실행 가능하게 함
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

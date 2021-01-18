@@ -25,14 +25,29 @@ class MemoListTableViewController: UITableViewController {
         return f
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+//        // 최신 데이터로 업데이트함
+//        tableView.reloadData()
+//        // 로그 출력
+//        print(#function)
+    }
+    
+    var token: NSObjectProtocol?
+    
+    deinit {
+        if let token = token {
+            NotificationCenter.default.removeObserver(token)
+        }
+    }
+    
+    // view가 호출된 후 자동으로 실행하는 func
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        token = NotificationCenter.default.addObserver(forName: ComposeViewController.newMemoDidInsert, object: nil, queue: OperationQueue.main) { [weak self] (noti) in self?.tableView.reloadData()
+     }
     }
 
     // MARK: - Table view data source
