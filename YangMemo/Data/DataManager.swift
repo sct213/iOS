@@ -35,6 +35,18 @@ class DataManager {
         }
         
     }
+    
+    func addNewMemo(_ memo: String?) {
+        // 데이터베이스 클래스인 Memo를 불러옴
+        let newMemo = Memo(context: mainContext)
+        newMemo.content = memo
+        // 현재 날짜 저장
+        newMemo.insertDate = Date()
+        
+        // 배열 가장 앞 부분에 출력함. (append는 뒤에 함)
+        memoList.insert(newMemo, at: 0)
+        saveContext()
+    }
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {

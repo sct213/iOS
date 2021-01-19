@@ -29,6 +29,7 @@ class ComposeViewController: UIViewController {
 //        let newMemo = Memo(content: memo)
 //        Memo.dummyMemoList.append(newMemo)
         
+        DataManager.shared.addNewMemo(memo)
         // 라디오 방송 브로드캐스팅과 같음
         NotificationCenter.default.post(name: ComposeViewController.newMemoDidInsert, object: nil)
         
