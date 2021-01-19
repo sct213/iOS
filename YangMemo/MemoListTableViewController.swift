@@ -25,6 +25,17 @@ class MemoListTableViewController: UITableViewController {
         return f
     }()
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // indexPath를 통해 몇번째 cell인지 확인 가능
+        if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell){
+            // 세그웨이로 연결된 화면에 데이터를 전달할때 구현하는 기본적인 기능
+            if let vc = segue.destination as? DetailViewController {
+                vc.memo = Memo.dummyMemoList[indexPath.row]
+            }
+            
+        }
+        
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
