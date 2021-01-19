@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B8F9F3F25B68F320088BD66 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8F9F3E25B68F320088BD66 /* DataManager.swift */; };
 		8B98100625B311B5000B96AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B98100525B311B5000B96AC /* AppDelegate.swift */; };
 		8B98100825B311B5000B96AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B98100725B311B5000B96AC /* SceneDelegate.swift */; };
 		8B98100D25B311B5000B96AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B98100B25B311B5000B96AC /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B8F9F3E25B68F320088BD66 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		8B98100225B311B5000B96AC /* YangMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YangMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B98100525B311B5000B96AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B98100725B311B5000B96AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B8F9F3D25B68F1F0088BD66 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8B8F9F3E25B68F320088BD66 /* DataManager.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		8B980FF925B311B5000B96AC = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +76,7 @@
 		8B98100425B311B5000B96AC /* YangMemo */ = {
 			isa = PBXGroup;
 			children = (
+				8B8F9F3D25B68F1F0088BD66 /* Data */,
 				8B98101E25B315F5000B96AC /* Model */,
 				8B98100525B311B5000B96AC /* AppDelegate.swift */,
 				8B98100725B311B5000B96AC /* SceneDelegate.swift */,
@@ -167,6 +178,7 @@
 				8B98100825B311B5000B96AC /* SceneDelegate.swift in Sources */,
 				8B98102025B3160F000B96AC /* Model.swift in Sources */,
 				8BA3FA6A25B5345A00B0123A /* UIViewController+Alert.swift in Sources */,
+				8B8F9F3F25B68F320088BD66 /* DataManager.swift in Sources */,
 				8BA3FA6D25B5987F00B0123A /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

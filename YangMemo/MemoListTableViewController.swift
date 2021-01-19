@@ -30,7 +30,7 @@ class MemoListTableViewController: UITableViewController {
         if let cell = sender as? UITableViewCell, let indexPath = tableView.indexPath(for: cell){
             // 세그웨이로 연결된 화면에 데이터를 전달할때 구현하는 기본적인 기능
             if let vc = segue.destination as? DetailViewController {
-                vc.memo = Memo.dummyMemoList[indexPath.row]
+                vc.memo = DataManager.shared.memoList[indexPath.row]
             }
             
         }
@@ -38,6 +38,11 @@ class MemoListTableViewController: UITableViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        // 데이터가 채워짐
+        DataManager.shared.fetchMemo()
+        // 앞을 기반으로 테이블에 업데이트됨
+        tableView.reloadData()
         
 //        // 최신 데이터로 업데이트함
 //        tableView.reloadData()
@@ -65,7 +70,8 @@ class MemoListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return Memo.dummyMemoList.count
+        return DataManager.shared.memoList.count
+        
     }
     
     // 제일 중요한 메서드
@@ -74,11 +80,11 @@ class MemoListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
         // 테이블 뷰에서 몇번째 값인지 확인 가능
-        let target = Memo.dummyMemoList[indexPath.row]
+        let target = DataManager.shared.memoList[indexPath.row]
         // 원하는 문자열 저장
         cell.textLabel?.text = target.content
         //
-        cell.detailTextLabel?.text = formatter.string(from: target.insertDate)
+        cell.detailTextLabel?.text = formatter.string(for: target.insertDate)
 
         return cell
     }
