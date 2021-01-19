@@ -24,6 +24,38 @@ class DetailViewController: UIViewController {
         return f
     }()
     
+    // 공유하기 (Apple에서 기본으로 제공해주는 기능을 사용)
+    @IBAction func share(_ sender: UIBarButtonItem) {
+        
+        guard let memo = memo?.content else { return }
+        
+        let vc = UIActivityViewController(activityItems: [memo], applicationActivities: nil)
+        
+        if let pc = vc.popoverPresentationController {
+            pc.barButtonItem = sender
+        }
+        present(vc, animated: true, completion: nil)
+    }
+    
+    // 편집상태에서 삭제 버튼 구현
+    @IBAction func deleteMemo(_ sender: Any) {
+        // 삭제 확인 alert 띄우기
+        let alert = UIAlertController(title: "삭제 확인", message: "메모를 삭제할까요?", preferredStyle: .alert)
+        // 삭제 확인 alert에서 삭제버튼을 구현하고, .destructive로 빨갛게 만들기
+        let okAction = UIAlertAction(title: "삭제", style: .destructive) { [weak self] (action) in
+            DataManager.shared.deleteMemo(self?.memo)
+            // navigation에 접근하여 popView
+            self?.navigationController?.popViewController(animated: true)
+        }
+        // 삭제확인 alert에 okAction버튼 추가
+        alert.addAction(okAction)
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
     // 첫번째 뷰 컨트롤러로 메모를 전달
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination.children.first as?
