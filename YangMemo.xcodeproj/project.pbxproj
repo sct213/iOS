@@ -17,6 +17,7 @@
 		8B98102425B3180B000B96AC /* MemoListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B98102325B3180B000B96AC /* MemoListTableViewController.swift */; };
 		8BA3FA6725B5249400B0123A /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA3FA6625B5249400B0123A /* ComposeViewController.swift */; };
 		8BA3FA6A25B5345A00B0123A /* UIViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA3FA6925B5345A00B0123A /* UIViewController+Alert.swift */; };
+		8BA3FA6D25B5987F00B0123A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA3FA6C25B5987F00B0123A /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		8B98102325B3180B000B96AC /* MemoListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListTableViewController.swift; sourceTree = "<group>"; };
 		8BA3FA6625B5249400B0123A /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		8BA3FA6925B5345A00B0123A /* UIViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Alert.swift"; sourceTree = "<group>"; };
+		8BA3FA6C25B5987F00B0123A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				8B98102325B3180B000B96AC /* MemoListTableViewController.swift */,
 				8BA3FA6625B5249400B0123A /* ComposeViewController.swift */,
 				8BA3FA6925B5345A00B0123A /* UIViewController+Alert.swift */,
+				8BA3FA6C25B5987F00B0123A /* DetailViewController.swift */,
 			);
 			path = YangMemo;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				8B98100825B311B5000B96AC /* SceneDelegate.swift in Sources */,
 				8B98102025B3160F000B96AC /* Model.swift in Sources */,
 				8BA3FA6A25B5345A00B0123A /* UIViewController+Alert.swift in Sources */,
+				8BA3FA6D25B5987F00B0123A /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
