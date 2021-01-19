@@ -7,7 +7,10 @@
 
 import UIKit
 
+// 보기 화면
 class DetailViewController: UIViewController {
+    
+    @IBOutlet weak var memoTableView: UITableView!
     
     // 값이 없기 때문에 옵셔널로 선언
     // 이전화면에서 저장한 메모가 저장됨
@@ -21,9 +24,29 @@ class DetailViewController: UIViewController {
         return f
     }()
     
+    // 첫번째 뷰 컨트롤러로 메모를 전달
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination.children.first as?
+            ComposeViewController {
+            vc.editTarget = memo
+        }
+    }
+    
+    // Notification Token 추가
+    var token: NSObjectProtocol?
+    
+    deinit {
+        if let token = token {
+            NotificationCenter.default.removeObserver(token)
+            
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        token = NotificationCenter.default.addObserver(forName: ComposeViewController.memoDidChange, object: nil, queue: OperationQueue.main, using: { [weak self] (noti) in self?.memoTableView.reloadData()
+            
+        })
         // Do any additional setup after loading the view.
     }
     
